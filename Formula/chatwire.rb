@@ -2,8 +2,8 @@ class Chatwire < Formula
   desc "macOS chat bridge: relay iMessages to Telegram, a web UI, and other integrations"
   homepage "https://github.com/allenbina/chatwire"
 
-  url "https://github.com/allenbina/chatwire/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "e5e121f3efbe050547433e742a2fc7f1b016deaa2e8781409eab392f36a30b13"
+  url "https://github.com/allenbina/chatwire/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "68cf4398916a756cc5eb7b6ac470c432af07463df9c1061b7cf6c045ada32f71"
   license "MIT"
   head "https://github.com/allenbina/chatwire.git", branch: "main"
 
