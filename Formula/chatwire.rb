@@ -2,13 +2,13 @@ class Chatwire < Formula
   desc "macOS chat bridge: relay iMessages to Telegram, a web UI, and other integrations"
   homepage "https://github.com/allenbina/chatwire"
 
-  url "https://github.com/allenbina/chatwire/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "0b41539d350e46d6be5e6e69da20658f06d91e6ff3c98354372eceb87dd0c6bc"
+  url "https://github.com/allenbina/chatwire/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "ac46dd313c8498368fd90f391b34cb45516bf9a72963a0df0729559b68a17119"
   license "MIT"
   head "https://github.com/allenbina/chatwire.git", branch: "main"
 
   depends_on macos: :big_sur # macOS 11+; Monterey is the reference install
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def install
     # Manual install: copy the project into libexec, build a venv there,
@@ -23,7 +23,7 @@ class Chatwire < Formula
     libexec.install Dir["*"]
 
     venv_path = libexec/".venv"
-    python = Formula["python@3.12"].opt_bin/"python3"
+    python = Formula["python@3.13"].opt_bin/"python3"
     system python, "-m", "venv", venv_path
     system venv_path/"bin/pip", "install", "--quiet", "--upgrade", "pip"
     system venv_path/"bin/pip", "install", "--quiet", libexec
@@ -40,7 +40,7 @@ class Chatwire < Formula
   # prompt where the user can see and approve it. `chatwire install-agents`
   # does that explicitly.
   def caveats
-    homebrew_python = Formula["python@3.12"].opt_bin/"python3"
+    homebrew_python = Formula["python@3.13"].opt_bin/"python3"
     <<~EOS
       chatwire is installed but not yet running.
 
