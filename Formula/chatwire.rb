@@ -46,7 +46,7 @@ class Chatwire < Formula
 
       Next steps:
         1. chatwire install-agents   # render and load launchd plists
-        2. chatwire setup            # opens the web wizard at http://localhost:8723/setup
+        2. chatwire init             # first-run wizard (handles + VAPID keys)
         3. chatwire doctor           # verify FDA + Automation grants
 
       macOS permissions:
@@ -69,6 +69,16 @@ class Chatwire < Formula
         If you'd rather use python.org Python (one set of grants, never
         re-prompts on a Homebrew upgrade), install via pipx instead:
           pipx install --python /Library/Frameworks/Python.framework/Versions/Current/bin/python3 chatwire
+
+      MCP support (optional):
+        To enable the MCP server (for Claude, Cursor, etc.), install the
+        optional extra after brew install:
+          #{libexec}/.venv/bin/pip install 'chatwire[mcp]'
+
+      Keep-awake:
+        chatwire needs your Mac awake to relay messages. We recommend
+        Amphetamine (free, Mac App Store):
+          https://apps.apple.com/app/amphetamine/id937984704
 
       Uninstalling:
         `brew uninstall chatwire` removes the binary and venv but does
